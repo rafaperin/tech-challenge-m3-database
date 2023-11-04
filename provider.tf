@@ -1,7 +1,7 @@
 provider "aws" {
   region     = "us-east-1"
-  access_key = var.aws_access_key_id
-  secret_key = var.aws_secret_acess_key
+  access_key = var.tf_var_aws_access_key_id
+  secret_key = var.tf_var_aws_secret_acess_key
 }
 
 data "aws_vpc" "default" {
@@ -28,6 +28,6 @@ resource "aws_db_instance" "m3-db" {
   skip_final_snapshot    = true
   publicly_accessible    = true
   vpc_security_group_ids = [aws_security_group.m3-db-security-group.id]
-  username               = var.db_username
-  password               = var.db_password
+  username               = var.tf_var_db_username
+  password               = var.tf_var_db_password
 }
