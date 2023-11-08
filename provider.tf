@@ -20,6 +20,7 @@ resource "aws_security_group" "m3-db-security-group" {
   }
 }
 
+
 resource "aws_db_instance" "m3-db" {
   identifier             = "m3-db"
   instance_class         = "db.t2.micro"
